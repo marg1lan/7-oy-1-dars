@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid';
-import { addTodo, removeTodo } from './features/counterSlice';
+import { addTodo } from './features/counterSlice';
 
 function App() {
 
@@ -14,6 +14,11 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    if (!text || text.length < 3) {
+      alert('Bu yerga 3 tadan kam malumot kiritish mumkin emas !!!')
+      return;
+    }
 
     dispatch(addTodo({
       id: uuidv4(),
@@ -36,16 +41,16 @@ function App() {
               </div>
             </div>
             <div className="information">
-              {todos.map((todo) => (
-                <div className="info" key={todos.id}>
-                  <div className="text">
-                    <h1>{todo.text}</h1>
-                  </div>
-                  <div className="amallar">
-                <button onClick={()=> dispatch(removeTodo(todo.id))}>Delete</button>
-              </div>
-                </div>
-              ))}
+            {todos && todos.map((todo) => (
+  <div className="info" key={todo.id}>
+    <div className="text">
+      <h1>{todo.text}</h1>
+    </div>
+    <div className="amallar">
+      <span>Delete</span>
+    </div>
+  </div>
+))}
             </div>
           </div>
         </form>

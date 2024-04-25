@@ -1,13 +1,13 @@
 body{
   font-family: system-ui;
-  background: yellow;
+  background-image:url(./assets/bg.webp) ;
   color: white;
   background-size: cover;
 }
 .todo-list{
   width: 500px;
   height:100%;
-  margin-left: 400px;
+  margin-left: 450px;
   margin-top: 70px;
   border: 5px solid lightgray;
   border-radius: 8px;
@@ -31,9 +31,12 @@ body{
   border-radius: 8px;
   transition: all 0.5s;
   margin-bottom: 20px;
+  color: white;
+  font-weight: 600;
 }
 .ook button:hover{
   background: lightgray;
+  color: black;
 }
 .decoration{
   text-decoration: underline;
@@ -55,7 +58,9 @@ body{
 .info{
   width: 410px;
   height: 50px;
-  background: linear-gradient(yellow, green);
+  background-image:url(./assets/bg2.jpg) ;
+  color: white;
+  background-size: cover;
   margin-left: 40px;
   border: 1px solid lightgray;
   margin-top: 30px;
@@ -75,7 +80,7 @@ body{
   padding: 5px;
   margin-left: 10px;
 }
-.amallar h2 {
+.amallar span {
   cursor: pointer;
   background: transparent;
   border: 1px solid white;
